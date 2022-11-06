@@ -1,0 +1,815 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a282b92a-55d6-40a0-8cd6-9578d64e3149" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Data Clean</ID>
+  <Name>Data Clean</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+      <Value>dbo_DataClean</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-8965" scrolltop="-4696" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="22140" y="14393" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DataClean" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4170" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00004a10000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DataClean" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-8965</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4696</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="bfc8e136-e981-4b73-9118-5ea33869dc51">
+    <DataSourceViewID>Original</DataSourceViewID>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d5c1fb83-5dfa-4935-b7cc-8efdc5283f76">
+      <ID>Age</ID>
+      <Name>Age</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="18da79f4-ff83-47cb-8d9c-290c1dd7710b">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b8a44e83-a9f5-4977-a5fb-b1f84304ada7">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Age</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="5ddc02cd-1d2b-4f01-be9e-ea9939750ed9">
+      <ID>Club Jersey Number</ID>
+      <Name>Club Jersey Number</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ad2b42cb-b0ad-47db-8b8d-8b04e88bcb7b">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5354595c-ea10-4356-b5b4-9e2c8d7a3ca9">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Club_x0020_Jersey_x0020_Number</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="34644070-040f-4cb4-9bce-f20f4bebb59e">
+      <ID>Club Joined</ID>
+      <Name>Club Joined</Name>
+      <Type>Date</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e035a820-fda5-433d-95c9-22421c3624ef">
+          <DataType>Date</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3c072f6a-2076-40ea-9c2d-e2f96ae3b303">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Club_x0020_Joined</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d19bfc35-9189-4c69-baf5-ac9bdb58e564">
+      <ID>Club Loaned From</ID>
+      <Name>Club Loaned From</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e7619e84-eecb-472b-8fad-3316cb6f5acc">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7aab98d9-a9a0-4d56-84ae-7e971c6a008f">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Club_x0020_Loaned_x0020_From</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d6975a25-4804-4cdd-914f-b9c18e7e34ab">
+      <ID>Contract Expires</ID>
+      <Name>Contract Expires</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5847b769-2582-4bae-89d1-0fb3dc0eb87e">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="528ed183-6c15-4e97-bce0-0829a6fb7156">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Contract_x0020_Expires</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="cdf3c020-cd1c-4a10-9001-903bcb73d50f">
+      <ID>Current Club</ID>
+      <Name>Current Club</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1e149866-20f8-42e6-9f73-d23db76d9c9f">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c2b0083b-c0e9-43d6-bd43-4986d9070a17">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Current_x0020_Club</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="85f0e5f2-b516-4a4e-ab87-5b7e1a681521">
+      <ID>Date Of Birth</ID>
+      <Name>Date Of Birth</Name>
+      <Type>Date</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f83009be-945b-4433-94d0-13e98409c7b4">
+          <DataType>Date</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b3143e1a-f0ec-4ff1-91b1-fc83b193b6a5">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Date_x0020_Of_x0020_Birth</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="9e9e8725-a734-4216-911a-536b329da0e7">
+      <ID>Day</ID>
+      <Name>Day</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9df801c2-6053-4ab5-8b28-996f288e0eca">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c6d30628-4a1d-4c45-98ec-4202ca968a4f">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Day</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="57cbcda6-e643-4a32-8595-6006265304f7">
+      <ID>Defending</ID>
+      <Name>Defending</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bb652aad-7ba3-4666-9ecc-659f46ad0c0b">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="550a4a8b-c54d-415c-a407-d3ba4b5f20d8">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Defending</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="7acec81e-0d75-4aed-9e7f-5169a0e68235">
+      <ID>Dribbling</ID>
+      <Name>Dribbling</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3f31cce8-423b-4c78-872b-090facad7ca1">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="74a9bf57-a6a1-4057-9314-f3767324403f">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Dribbling</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d4ee4c83-b575-4cf7-b677-83792b1c9a35">
+      <ID>Height</ID>
+      <Name>Height</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="afc7bec1-6c2e-4ca6-a5d4-97cfd91ce7c7">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="42a821ea-60ca-4e67-8d72-cafb8d63aad9">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Height</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="bd5750c8-70d0-43d8-bb3b-775ade999b1a">
+      <ID>League</ID>
+      <Name>League</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e894cdb3-f087-4268-82a9-a88499dcfd70">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8db0c70b-b25e-4466-88fe-7b74ad0f1414">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>League</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="dd74a6d5-63db-4e53-87f3-940d6525c9bb">
+      <ID>Market Value</ID>
+      <Name>Market Value</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a9bbf47c-bc0b-4b32-a359-fa49329366f6">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c8b2963b-e9c5-447d-abc8-864ef4b94345">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Market_x0020_Value</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="cd1befd9-5c3a-45cd-ba2c-5fc745d615b0">
+      <ID>Month</ID>
+      <Name>Month</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ea5635c1-d1bf-4857-82c2-982f225e4f3c">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="69ddf0cc-827a-40f3-bc90-3faf46148453">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Month</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="e0cb9d58-a0e6-4c91-85a2-1c68c5460b75">
+      <ID>Name In Home Country</ID>
+      <Name>Name In Home Country</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3cc70a2c-f17c-4320-89be-9470da01e8dd">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="16899e91-2225-4c7a-9c2d-5590fa6a9896">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Name_x0020_In_x0020_Home_x0020_Country</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="a1d6853f-238b-47eb-a182-4c96a11a5b94">
+      <ID>Nationality Name</ID>
+      <Name>Nationality Name</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="08ef188d-ff88-42a4-8e66-284bf92a980e">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7718524d-1e7d-4746-98b6-1a8fb85a4b1b">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Nationality_x0020_Name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="832d5912-9ede-42e8-8a67-444606bfbe2f">
+      <ID>Overall</ID>
+      <Name>Overall</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="917f820a-dcaf-4408-a5f1-0c8a1107b092">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="76e25a11-85b3-43f9-a5e9-27dd95fa8c5a">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Overall</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="2aa72b01-3da9-47e2-acc7-05009a0efffd">
+      <ID>Pace</ID>
+      <Name>Pace</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="615ffbbd-f95d-43e5-8acb-0cb8c1ce4cbd">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a61b494c-3987-410a-9b94-a12b016f65ce">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Pace</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="a22e778a-3a25-4c43-8cb0-5681a7892da2">
+      <ID>Passing</ID>
+      <Name>Passing</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="01e1df8b-9b15-4986-8bb4-e2a6f9895073">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7e63752a-3af2-4192-8e69-58641cc1a815">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Passing</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="0d35b965-b8d1-47e9-bed6-f275e676bb83">
+      <ID>Physic</ID>
+      <Name>Physic</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1ef41e8b-fc2f-4fb1-bbeb-6c480ae36474">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="027fd232-225b-4550-a1df-9e4bd889e549">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Physic</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="245c73d3-17c4-461d-a9e5-7aeca3344bf0">
+      <ID>Positions</ID>
+      <Name>Positions</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="09f77204-fc95-4a67-bffb-e6e9464e94d0">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b0930254-5671-41df-be69-1242dbe5d197">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Positions</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="4686c994-c7df-45d0-b705-5f825c8a9545">
+      <ID>Potential</ID>
+      <Name>Potential</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="778f0832-8604-40cc-94db-92e28a31de5d">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1a5d6464-0e48-4e65-9342-3aa3dd30bc65">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Potential</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="2f2aa17e-494a-451c-83c0-9b0a358453dc">
+      <ID>Preferred Foot</ID>
+      <Name>Preferred Foot</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e003b418-1af5-4892-bad3-67f81f2d13e9">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4799bc16-5c96-4147-aad9-2a4860f5c913">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Preferred_x0020_Foot</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="bace1b53-566e-45ec-9cda-797f4d94dc6a">
+      <ID>Shooting</ID>
+      <Name>Shooting</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1996cabf-ef21-4498-820e-096783f019e3">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1132906b-fa2b-4363-8575-2e38712a907c">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Shooting</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="5991d795-d03d-4402-a744-88e835c5b5ab">
+      <ID>Short Name</ID>
+      <Name>Short Name</Name>
+      <IsKey>true</IsKey>
+      <Type>Text</Type>
+      <Content>Key</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1e2c7de3-3bb2-47ec-8f9d-249c058cbb26">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1c0fe3ec-8a7f-4219-b57b-0fa967ee94b6">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Short_x0020_Name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="cb2c390e-39a6-4625-b322-5babc95e4f5f">
+      <ID>Weight</ID>
+      <Name>Weight</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="95987cd7-7cb1-4735-b674-419c478410ce">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3e80fa99-8966-4528-9b8f-0a636d2c0c94">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Weight</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="e8e1d57f-c420-43ce-859b-23f36ccb5408">
+      <ID>Work Rate</ID>
+      <Name>Work Rate</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c04db716-dadd-4526-aab4-284498257dfe">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e0d0bc77-140d-4ecd-bab1-7b20db4eb8b6">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Work_x0020_Rate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="e3e4ef5d-9de3-4111-9db8-f2b71478758a">
+      <ID>Year</ID>
+      <Name>Year</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b57b6994-3f22-47a2-9716-28f96565fe66">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1861a09c-23d4-4c98-86e7-81e1d1ab4ad1">
+            <TableID>dbo_DataClean</TableID>
+            <ColumnID>Year</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="66a0a0f9-4896-4f46-9244-e09bb07b375e">
+      <ID>Data Clean</ID>
+      <Name>Data Clean</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Decision_Trees</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="26a6059c-73e7-44bd-81ac-b24a828faaa5">
+          <ID>Club Jersey Number</ID>
+          <Name>Club Jersey Number</Name>
+          <SourceColumnID>Club Jersey Number</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="f4ed8871-fbbb-49f6-9883-42b4e2748534">
+          <ID>Defending</ID>
+          <Name>Defending</Name>
+          <SourceColumnID>Defending</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="5435894a-e1d4-4e19-94a0-d242e9eb9aa3">
+          <ID>Dribbling</ID>
+          <Name>Dribbling</Name>
+          <SourceColumnID>Dribbling</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="d8335f19-c94d-437e-bc99-a73d6eed78d9">
+          <ID>Height</ID>
+          <Name>Height</Name>
+          <SourceColumnID>Height</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="8a0cda0e-ac35-4df5-b5fd-a515aae5f21f">
+          <ID>League</ID>
+          <Name>League</Name>
+          <SourceColumnID>League</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="f2a8d369-a2fb-4455-8c40-20ae9408e42d">
+          <ID>Overall</ID>
+          <Name>Overall</Name>
+          <SourceColumnID>Overall</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="e5994997-11e2-4ca6-9e38-3c8d03807bfd">
+          <ID>Pace</ID>
+          <Name>Pace</Name>
+          <SourceColumnID>Pace</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="11d9b07f-93fe-42a8-b259-3837d7306caa">
+          <ID>Passing</ID>
+          <Name>Passing</Name>
+          <SourceColumnID>Passing</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="1546f578-deeb-4d23-b21c-c14f8187709f">
+          <ID>Physic</ID>
+          <Name>Physic</Name>
+          <SourceColumnID>Physic</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="4617e9d0-b018-4bdd-be78-b495ebe4abcb">
+          <ID>Potential</ID>
+          <Name>Potential</Name>
+          <SourceColumnID>Potential</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="6540399f-1d0d-411e-9d06-0106fd3edff2">
+          <ID>Shooting</ID>
+          <Name>Shooting</Name>
+          <SourceColumnID>Shooting</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="a02dca55-ba74-4366-af32-f04e37931ed8">
+          <ID>Short Name</ID>
+          <Name>Short Name</Name>
+          <SourceColumnID>Short Name</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="7051dc17-2cd5-4f96-8adb-1a6ab51665a2">
+          <ID>Weight</ID>
+          <Name>Weight</Name>
+          <SourceColumnID>Weight</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="6b0c119d-c7a5-4c87-bb8b-a15fe7f1bae6">
+          <ID>Work Rate</ID>
+          <Name>Work Rate</Name>
+          <SourceColumnID>Work Rate</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+      </Columns>
+    </MiningModel>
+    <MiningModel dwd:design-time-name="81c07db5-afb5-4644-b279-830a0bb9d5bc">
+      <ID>1</ID>
+      <Name>1</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Clustering</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="1c4eaa7a-805d-4801-9237-d3cd595963d6">
+          <ID>Club Jersey Number</ID>
+          <Name>Club Jersey Number</Name>
+          <SourceColumnID>Club Jersey Number</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="ea157a40-7766-418a-aff8-a0f536b78e6b">
+          <ID>Defending</ID>
+          <Name>Defending</Name>
+          <SourceColumnID>Defending</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="b58d3c64-b6be-4f1f-84b9-6a6674172674">
+          <ID>Dribbling</ID>
+          <Name>Dribbling</Name>
+          <SourceColumnID>Dribbling</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="47bab9f2-fb3d-4d13-95d4-ae4bad9b3eb3">
+          <ID>Height</ID>
+          <Name>Height</Name>
+          <SourceColumnID>Height</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="fe35e762-265e-4fd9-83ac-32dfc462863b">
+          <ID>League</ID>
+          <Name>League</Name>
+          <SourceColumnID>League</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="3f7b17da-5e14-48df-bc19-3ab02f7a8971">
+          <ID>Overall</ID>
+          <Name>Overall</Name>
+          <SourceColumnID>Overall</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="6e8ac4dc-91ec-4f8d-8e81-0b12791a2001">
+          <ID>Pace</ID>
+          <Name>Pace</Name>
+          <SourceColumnID>Pace</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="3f6350e6-786e-44bc-b50b-d57d83b237a9">
+          <ID>Passing</ID>
+          <Name>Passing</Name>
+          <SourceColumnID>Passing</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="6062fb6f-7d53-4662-a5e7-befdac3d8568">
+          <ID>Physic</ID>
+          <Name>Physic</Name>
+          <SourceColumnID>Physic</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="d49e3ed9-1a2a-46af-b5e5-75ac5e62d647">
+          <ID>Potential</ID>
+          <Name>Potential</Name>
+          <SourceColumnID>Potential</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="4977fbe6-44e1-4d89-9e32-b3aa6a78f715">
+          <ID>Shooting</ID>
+          <Name>Shooting</Name>
+          <SourceColumnID>Shooting</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="93e14554-9748-4982-9bc0-04ea8b5e98a6">
+          <ID>Short Name</ID>
+          <Name>Short Name</Name>
+          <SourceColumnID>Short Name</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="c33611e4-bab6-4b2e-8995-8fef72a16d5b">
+          <ID>Weight</ID>
+          <Name>Weight</Name>
+          <SourceColumnID>Weight</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="86c6777a-c3bc-4e7b-801c-1c77d322ee88">
+          <ID>Work Rate</ID>
+          <Name>Work Rate</Name>
+          <SourceColumnID>Work Rate</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+      </Columns>
+    </MiningModel>
+    <MiningModel dwd:design-time-name="4f00af39-7b3f-47ef-9b41-4e63bc6f0c41">
+      <ID>2</ID>
+      <Name>2</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Logistic_Regression</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="7e97804b-9937-43d2-9f19-454c66b50706">
+          <ID>Club Jersey Number</ID>
+          <Name>Club Jersey Number</Name>
+          <SourceColumnID>Club Jersey Number</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="0de9da48-0e20-4aca-b89e-4042c15076a3">
+          <ID>Defending</ID>
+          <Name>Defending</Name>
+          <SourceColumnID>Defending</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="d42e70e3-b09b-4b16-a539-3d9bb805417b">
+          <ID>Dribbling</ID>
+          <Name>Dribbling</Name>
+          <SourceColumnID>Dribbling</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="6fe6cce7-f2eb-403b-9a58-b1b857213a44">
+          <ID>Height</ID>
+          <Name>Height</Name>
+          <SourceColumnID>Height</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="3d9950e4-eb0f-4046-aea8-91beeb027cb7">
+          <ID>League</ID>
+          <Name>League</Name>
+          <SourceColumnID>League</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="1a65977a-11f5-4ee8-be2a-0f453fe570b9">
+          <ID>Overall</ID>
+          <Name>Overall</Name>
+          <SourceColumnID>Overall</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="571b84a1-902f-451f-a90b-913aaf038011">
+          <ID>Pace</ID>
+          <Name>Pace</Name>
+          <SourceColumnID>Pace</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="fccd7e0d-6851-43dd-a389-11f8fdceb331">
+          <ID>Passing</ID>
+          <Name>Passing</Name>
+          <SourceColumnID>Passing</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="1660d241-e552-42a0-917f-bf1160ee71cb">
+          <ID>Physic</ID>
+          <Name>Physic</Name>
+          <SourceColumnID>Physic</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="b94974c9-a7e6-4c82-9c1e-133aaa98d95c">
+          <ID>Potential</ID>
+          <Name>Potential</Name>
+          <SourceColumnID>Potential</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="2025ec97-dd98-474a-8cc6-ddaf0c89b0e6">
+          <ID>Shooting</ID>
+          <Name>Shooting</Name>
+          <SourceColumnID>Shooting</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="74051636-da1f-4064-8baf-a0f867ca7b2f">
+          <ID>Short Name</ID>
+          <Name>Short Name</Name>
+          <SourceColumnID>Short Name</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="84db1556-02e8-43d8-842e-9a4c7818bd05">
+          <ID>Weight</ID>
+          <Name>Weight</Name>
+          <SourceColumnID>Weight</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="457e238d-cecb-4c9d-9d93-eb301a4bcd52">
+          <ID>Work Rate</ID>
+          <Name>Work Rate</Name>
+          <SourceColumnID>Work Rate</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+      </Columns>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+  <ddl100_100:HoldoutMaxCases>1000</ddl100_100:HoldoutMaxCases>
+</MiningStructure>

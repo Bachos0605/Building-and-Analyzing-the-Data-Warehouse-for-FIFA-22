@@ -1,0 +1,142 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1625c44d-7ecf-4bfe-9f75-35a1962cef31" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Original</ID>
+  <Name>Original</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Original</DataSourceID>
+  <Schema>
+    <xs:schema id="Original" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Original" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="4f848ee1-2864-4bc9-9813-30730d3256ff">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_DataClean" msprop:design-time-name="7bfb3862-d113-449d-9bce-141a291861d5" msprop:DbTableName="DataClean" msprop:FriendlyName="DataClean" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Short_x0020_Name" msprop:design-time-name="228d13dc-f426-4e4a-a409-d4b806396896" msprop:DbColumnName="Short Name" msprop:FriendlyName="Short Name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Name_x0020_In_x0020_Home_x0020_Country" msprop:design-time-name="af0bf780-6978-435f-82f0-122e22702244" msprop:DbColumnName="Name In Home Country" msprop:FriendlyName="Name In Home Country" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Positions" msprop:design-time-name="c2659b5f-6417-402c-bd1c-4bb59fe9dffa" msprop:DbColumnName="Positions" msprop:FriendlyName="Positions" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Overall" msprop:design-time-name="a539fc24-e0a2-4fc0-9d1e-8bb3bd3c3d71" msprop:DbColumnName="Overall" msprop:FriendlyName="Overall" type="xs:double" minOccurs="0" />
+                  <xs:element name="Potential" msprop:design-time-name="d2918d74-7095-459d-ab51-08e2196b3822" msprop:DbColumnName="Potential" msprop:FriendlyName="Potential" type="xs:double" minOccurs="0" />
+                  <xs:element name="Market_x0020_Value" msprop:design-time-name="b7cf1f34-71fe-46ba-bc9b-090a25bf5b71" msprop:DbColumnName="Market Value" msprop:FriendlyName="Market Value" type="xs:double" minOccurs="0" />
+                  <xs:element name="Age" msprop:design-time-name="7d6d9d9d-abc2-4cc3-9943-6c0f5a9568b2" msprop:DbColumnName="Age" msprop:FriendlyName="Age" type="xs:double" minOccurs="0" />
+                  <xs:element name="Day" msprop:design-time-name="2e3623e0-57bd-4dd8-be46-02ad6169a946" msprop:DbColumnName="Day" msprop:FriendlyName="Day" type="xs:double" minOccurs="0" />
+                  <xs:element name="Month" msprop:design-time-name="24066e72-29c3-436c-b552-34b2c807c764" msprop:DbColumnName="Month" msprop:FriendlyName="Month" type="xs:double" minOccurs="0" />
+                  <xs:element name="Year" msprop:design-time-name="90f518e3-e594-478a-801b-4ad77ce785ac" msprop:DbColumnName="Year" msprop:FriendlyName="Year" type="xs:double" minOccurs="0" />
+                  <xs:element name="Date_x0020_Of_x0020_Birth" msprop:design-time-name="03a4fb18-45d1-4dcc-ac81-e7529525fa04" msprop:DbColumnName="Date Of Birth" msprop:FriendlyName="Date Of Birth" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Height" msprop:design-time-name="a6e3fdee-4ac0-4624-80e2-fdd8c20b5093" msprop:DbColumnName="Height" msprop:FriendlyName="Height" type="xs:double" minOccurs="0" />
+                  <xs:element name="Weight" msprop:design-time-name="81acbc01-3e1f-4274-9a70-239a005e8295" msprop:DbColumnName="Weight" msprop:FriendlyName="Weight" type="xs:double" minOccurs="0" />
+                  <xs:element name="Current_x0020_Club" msprop:design-time-name="a363550a-149c-4937-8593-e0a7e56963d6" msprop:DbColumnName="Current Club" msprop:FriendlyName="Current Club" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="League" msprop:design-time-name="fdeb84e0-2928-4bdb-8c23-b97fc628ab46" msprop:DbColumnName="League" msprop:FriendlyName="League" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Club_x0020_Jersey_x0020_Number" msprop:design-time-name="9c4e06a3-ec25-4b7d-ac0b-591de32b68aa" msprop:DbColumnName="Club Jersey Number" msprop:FriendlyName="Club Jersey Number" type="xs:double" minOccurs="0" />
+                  <xs:element name="Club_x0020_Loaned_x0020_From" msprop:design-time-name="6c42d7bc-f300-48c9-8a9b-2dfb444e8f23" msprop:DbColumnName="Club Loaned From" msprop:FriendlyName="Club Loaned From" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Club_x0020_Joined" msprop:design-time-name="9e289240-c6c9-472d-a202-654b74175065" msprop:DbColumnName="Club Joined" msprop:FriendlyName="Club Joined" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Contract_x0020_Expires" msprop:design-time-name="eb503d95-834c-4138-8018-7880ef54629d" msprop:DbColumnName="Contract Expires" msprop:FriendlyName="Contract Expires" type="xs:double" minOccurs="0" />
+                  <xs:element name="Nationality_x0020_Name" msprop:design-time-name="611d079d-7cf4-4085-bb14-c2061699695b" msprop:DbColumnName="Nationality Name" msprop:FriendlyName="Nationality Name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Preferred_x0020_Foot" msprop:design-time-name="800085f6-c5b5-4b1c-bd1a-c4f1be80b6b8" msprop:DbColumnName="Preferred Foot" msprop:FriendlyName="Preferred Foot" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Work_x0020_Rate" msprop:design-time-name="0ae22681-4bd5-4901-bf42-bee972acecfa" msprop:DbColumnName="Work Rate" msprop:FriendlyName="Work Rate" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Pace" msprop:design-time-name="afdd7137-13ee-4d3f-aa60-e5877a4658aa" msprop:DbColumnName="Pace" msprop:FriendlyName="Pace" type="xs:double" minOccurs="0" />
+                  <xs:element name="Shooting" msprop:design-time-name="e8094e3e-4b40-4cba-a3a8-9d50422998af" msprop:DbColumnName="Shooting" msprop:FriendlyName="Shooting" type="xs:double" minOccurs="0" />
+                  <xs:element name="Passing" msprop:design-time-name="7b7b015c-3e70-4ff5-90de-82ed6da4be4b" msprop:DbColumnName="Passing" msprop:FriendlyName="Passing" type="xs:double" minOccurs="0" />
+                  <xs:element name="Dribbling" msprop:design-time-name="9ab5f8bb-f05a-42f6-9840-58c4c4d37ced" msprop:DbColumnName="Dribbling" msprop:FriendlyName="Dribbling" type="xs:double" minOccurs="0" />
+                  <xs:element name="Defending" msprop:design-time-name="7daebe0d-c3a9-44db-9ad4-33ceb8f273ad" msprop:DbColumnName="Defending" msprop:FriendlyName="Defending" type="xs:double" minOccurs="0" />
+                  <xs:element name="Physic" msprop:design-time-name="75ce0aae-e4df-431c-93de-24ea911db138" msprop:DbColumnName="Physic" msprop:FriendlyName="Physic" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <Original xmlns="" />
+  </Schema>
+</DataSourceView>
