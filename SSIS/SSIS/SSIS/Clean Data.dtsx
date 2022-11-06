@@ -1,0 +1,2097 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/22/2022 4:23:25 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-DJSOJOS"
+  DTS:CreatorName="DESKTOP-DJSOJOS\19521"
+  DTS:DTSID="{CFBDDA79-4730-4B94-8DF9-3DD219FB2F4E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Clean Data"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{058057F9-FAAF-40B6-8184-3EE869EA5F6D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Clean Dataset"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2A4BD98E-A97A-45E2-A91D-4B2615E118F5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clean Dataset"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Clean Dataset\DataClean"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DataClean"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DataClean]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Clean Dataset\DataClean.Connections[OleDbConnection]"
+                  connectionManagerID="{CCAE4831-A9AA-4970-B194-1F36843234FB}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-DJSOJOS.OriginalDataset]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Short Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Short Name"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Short Name]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Short Name]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Name In Home Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name In Home Country"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Name In Home Country]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Name In Home Country]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Positions]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Positions"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Positions]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Positions]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Overall]"
+                      cachedDataType="r8"
+                      cachedName="Overall"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Overall]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Overall]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Potential]"
+                      cachedDataType="r8"
+                      cachedName="Potential"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Potential]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Potential]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Market Value]"
+                      cachedDataType="r8"
+                      cachedName="Market Value"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Market Value]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Market Value]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Age]"
+                      cachedDataType="r8"
+                      cachedName="Age"
+                      cachedSortKeyPosition="7"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Day]"
+                      cachedDataType="r8"
+                      cachedName="Day"
+                      cachedSortKeyPosition="8"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Day]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Day]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Month]"
+                      cachedDataType="r8"
+                      cachedName="Month"
+                      cachedSortKeyPosition="9"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Month]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Year]"
+                      cachedDataType="r8"
+                      cachedName="Year"
+                      cachedSortKeyPosition="10"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Date Of Birth]"
+                      cachedDataType="date"
+                      cachedName="Date Of Birth"
+                      cachedSortKeyPosition="11"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Date Of Birth]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Date Of Birth]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Height]"
+                      cachedDataType="r8"
+                      cachedName="Height"
+                      cachedSortKeyPosition="12"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Height]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Height]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Weight]"
+                      cachedDataType="r8"
+                      cachedName="Weight"
+                      cachedSortKeyPosition="13"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Weight]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Weight]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Current Club]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Current Club"
+                      cachedSortKeyPosition="14"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Current Club]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Current Club]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[League]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="League"
+                      cachedSortKeyPosition="15"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[League]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[League]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Club Jersey Number]"
+                      cachedDataType="r8"
+                      cachedName="Club Jersey Number"
+                      cachedSortKeyPosition="16"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Club Jersey Number]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Club Jersey Number]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Club Loaned From]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Club Loaned From"
+                      cachedSortKeyPosition="17"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Club Loaned From]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Club Loaned From]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Club Joined]"
+                      cachedDataType="date"
+                      cachedName="Club Joined"
+                      cachedSortKeyPosition="18"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Club Joined]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Club Joined]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Contract Expires]"
+                      cachedDataType="r8"
+                      cachedName="Contract Expires"
+                      cachedSortKeyPosition="19"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Contract Expires]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Contract Expires]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Nationality Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nationality Name"
+                      cachedSortKeyPosition="20"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Nationality Name]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Nationality Name]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Preferred Foot]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Preferred Foot"
+                      cachedSortKeyPosition="21"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Preferred Foot]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Preferred Foot]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Work Rate]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Work Rate"
+                      cachedSortKeyPosition="22"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Work Rate]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Work Rate]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Pace]"
+                      cachedDataType="r8"
+                      cachedName="Pace"
+                      cachedSortKeyPosition="23"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Pace]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Pace]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Shooting]"
+                      cachedDataType="r8"
+                      cachedName="Shooting"
+                      cachedSortKeyPosition="24"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Shooting]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Shooting]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Passing]"
+                      cachedDataType="r8"
+                      cachedName="Passing"
+                      cachedSortKeyPosition="25"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Passing]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Passing]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Dribbling]"
+                      cachedDataType="r8"
+                      cachedName="Dribbling"
+                      cachedSortKeyPosition="26"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Dribbling]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Dribbling]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Defending]"
+                      cachedDataType="r8"
+                      cachedName="Defending"
+                      cachedSortKeyPosition="27"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Defending]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Defending]" />
+                    <inputColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].Columns[Physic]"
+                      cachedDataType="r8"
+                      cachedName="Physic"
+                      cachedSortKeyPosition="28"
+                      externalMetadataColumnId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Physic]"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Physic]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Short Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Short Name" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Name In Home Country]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name In Home Country" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Positions]"
+                      dataType="wstr"
+                      length="255"
+                      name="Positions" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Overall]"
+                      dataType="r8"
+                      name="Overall" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Potential]"
+                      dataType="r8"
+                      name="Potential" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Market Value]"
+                      dataType="r8"
+                      name="Market Value" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="r8"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Day]"
+                      dataType="r8"
+                      name="Day" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      dataType="r8"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      dataType="r8"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Date Of Birth]"
+                      dataType="dbDate"
+                      name="Date Of Birth" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Height]"
+                      dataType="r8"
+                      name="Height" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Weight]"
+                      dataType="r8"
+                      name="Weight" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Current Club]"
+                      dataType="wstr"
+                      length="255"
+                      name="Current Club" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[League]"
+                      dataType="wstr"
+                      length="255"
+                      name="League" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Club Jersey Number]"
+                      dataType="r8"
+                      name="Club Jersey Number" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Club Loaned From]"
+                      dataType="wstr"
+                      length="255"
+                      name="Club Loaned From" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Club Joined]"
+                      dataType="dbDate"
+                      name="Club Joined" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Contract Expires]"
+                      dataType="r8"
+                      name="Contract Expires" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Nationality Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nationality Name" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Preferred Foot]"
+                      dataType="wstr"
+                      length="255"
+                      name="Preferred Foot" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Work Rate]"
+                      dataType="wstr"
+                      length="255"
+                      name="Work Rate" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Pace]"
+                      dataType="r8"
+                      name="Pace" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Shooting]"
+                      dataType="r8"
+                      name="Shooting" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Passing]"
+                      dataType="r8"
+                      name="Passing" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Dribbling]"
+                      dataType="r8"
+                      name="Dribbling" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Defending]"
+                      dataType="r8"
+                      name="Defending" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input].ExternalColumns[Physic]"
+                      dataType="r8"
+                      name="Physic" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Clean Dataset\DataClean.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Clean Dataset\DataClean.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Clean Dataset\DataClean.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\DataClean.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Clean Dataset\DataClean.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Clean Dataset\Dataset"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Dataset"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'FIFA 22$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Clean Dataset\Dataset.Connections[OleDbConnection]"
+                  connectionManagerID="{07DD4874-26ED-4E2C-AFC0-F143FC38D04B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Short Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Short Name]"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Short Name]"
+                      name="Short Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Name In Home Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Name In Home Country]"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Name In Home Country]"
+                      name="Name In Home Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Positions]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Positions]"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Positions]"
+                      name="Positions"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Overall]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Overall]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Overall]"
+                      name="Overall"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Potential]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Potential]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Potential]"
+                      name="Potential"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Market Value]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Market Value]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Market Value]"
+                      name="Market Value"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Age]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Age]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Day]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Day]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Day]"
+                      name="Day"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Month]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Month]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Month]"
+                      name="Month"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Year]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Year]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Date Of Birth]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Date Of Birth]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Date Of Birth]"
+                      name="Date Of Birth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Height]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Height]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Height]"
+                      name="Height"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Weight]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Weight]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Weight]"
+                      name="Weight"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Current Club]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Current Club]"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Current Club]"
+                      name="Current Club"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[League]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[League]"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[League]"
+                      name="League"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Club Jersey Number]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Club Jersey Number]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Club Jersey Number]"
+                      name="Club Jersey Number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Club Loaned From]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Club Loaned From]"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Club Loaned From]"
+                      name="Club Loaned From"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Club Joined]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Club Joined]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Club Joined]"
+                      name="Club Joined"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Contract Expires]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Contract Expires]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Contract Expires]"
+                      name="Contract Expires"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Nationality Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Nationality Name]"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Nationality Name]"
+                      name="Nationality Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Preferred Foot]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Preferred Foot]"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Preferred Foot]"
+                      name="Preferred Foot"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Work Rate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Work Rate]"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Work Rate]"
+                      name="Work Rate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Pace]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Pace]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Pace]"
+                      name="Pace"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Shooting]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Shooting]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Shooting]"
+                      name="Shooting"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Passing]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Passing]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Passing]"
+                      name="Passing"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Dribbling]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Dribbling]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Dribbling]"
+                      name="Dribbling"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Defending]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Defending]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Defending]"
+                      name="Defending"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Physic]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Physic]"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Physic]"
+                      name="Physic"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Short Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Short Name" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Name In Home Country]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name In Home Country" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Positions]"
+                      dataType="wstr"
+                      length="255"
+                      name="Positions" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Overall]"
+                      dataType="r8"
+                      name="Overall" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Potential]"
+                      dataType="r8"
+                      name="Potential" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Market Value]"
+                      dataType="r8"
+                      name="Market Value" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Age]"
+                      dataType="r8"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Day]"
+                      dataType="r8"
+                      name="Day" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Month]"
+                      dataType="r8"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Year]"
+                      dataType="r8"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Date Of Birth]"
+                      dataType="date"
+                      name="Date Of Birth" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Height]"
+                      dataType="r8"
+                      name="Height" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Weight]"
+                      dataType="r8"
+                      name="Weight" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Current Club]"
+                      dataType="wstr"
+                      length="255"
+                      name="Current Club" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[League]"
+                      dataType="wstr"
+                      length="255"
+                      name="League" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Club Jersey Number]"
+                      dataType="r8"
+                      name="Club Jersey Number" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Club Loaned From]"
+                      dataType="wstr"
+                      length="255"
+                      name="Club Loaned From" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Club Joined]"
+                      dataType="date"
+                      name="Club Joined" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Contract Expires]"
+                      dataType="r8"
+                      name="Contract Expires" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Nationality Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nationality Name" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Preferred Foot]"
+                      dataType="wstr"
+                      length="255"
+                      name="Preferred Foot" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Work Rate]"
+                      dataType="wstr"
+                      length="255"
+                      name="Work Rate" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Pace]"
+                      dataType="r8"
+                      name="Pace" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Shooting]"
+                      dataType="r8"
+                      name="Shooting" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Passing]"
+                      dataType="r8"
+                      name="Passing" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Dribbling]"
+                      dataType="r8"
+                      name="Dribbling" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Defending]"
+                      dataType="r8"
+                      name="Defending" />
+                    <externalMetadataColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].ExternalColumns[Physic]"
+                      dataType="r8"
+                      name="Physic" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Short Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Short Name]"
+                      name="Short Name" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Name In Home Country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Name In Home Country]"
+                      name="Name In Home Country" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Positions]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Positions]"
+                      name="Positions" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Overall]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Overall]"
+                      name="Overall" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Potential]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Potential]"
+                      name="Potential" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Market Value]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Market Value]"
+                      name="Market Value" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Age]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Age]"
+                      name="Age" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Day]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Day]"
+                      name="Day" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Month]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Month]"
+                      name="Month" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Year]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Year]"
+                      name="Year" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Date Of Birth]"
+                      dataType="date"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Date Of Birth]"
+                      name="Date Of Birth" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Height]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Height]"
+                      name="Height" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Weight]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Weight]"
+                      name="Weight" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Current Club]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Current Club]"
+                      name="Current Club" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[League]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[League]"
+                      name="League" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Club Jersey Number]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Club Jersey Number]"
+                      name="Club Jersey Number" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Club Loaned From]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Club Loaned From]"
+                      name="Club Loaned From" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Club Joined]"
+                      dataType="date"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Club Joined]"
+                      name="Club Joined" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Contract Expires]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Contract Expires]"
+                      name="Contract Expires" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Nationality Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Nationality Name]"
+                      name="Nationality Name" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Preferred Foot]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Preferred Foot]"
+                      name="Preferred Foot" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Work Rate]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Work Rate]"
+                      name="Work Rate" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Pace]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Pace]"
+                      name="Pace" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Shooting]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Shooting]"
+                      name="Shooting" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Passing]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Passing]"
+                      name="Passing" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Dribbling]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Dribbling]"
+                      name="Dribbling" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Defending]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Defending]"
+                      name="Defending" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Physic]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[Physic]"
+                      name="Physic" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Clean Dataset\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Clean Dataset\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Short Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Short Name"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Short Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Name In Home Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name In Home Country"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Name In Home Country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Positions]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Positions"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Positions]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Overall]"
+                      cachedDataType="r8"
+                      cachedName="Overall"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Overall]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Potential]"
+                      cachedDataType="r8"
+                      cachedName="Potential"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Potential]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">5</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Market Value]"
+                      cachedDataType="r8"
+                      cachedName="Market Value"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Market Value]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">6</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Age]"
+                      cachedDataType="r8"
+                      cachedName="Age"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Age]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">7</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Day]"
+                      cachedDataType="r8"
+                      cachedName="Day"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Day]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">8</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Month]"
+                      cachedDataType="r8"
+                      cachedName="Month"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Month]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">9</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Year]"
+                      cachedDataType="r8"
+                      cachedName="Year"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Year]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">10</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Date Of Birth]"
+                      cachedDataType="date"
+                      cachedName="Date Of Birth"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Date Of Birth]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">11</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Height]"
+                      cachedDataType="r8"
+                      cachedName="Height"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Height]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">12</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Weight]"
+                      cachedDataType="r8"
+                      cachedName="Weight"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Weight]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">13</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Current Club]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Current Club"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Current Club]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">14</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[League]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="League"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[League]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">15</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Club Jersey Number]"
+                      cachedDataType="r8"
+                      cachedName="Club Jersey Number"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Club Jersey Number]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">16</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Club Loaned From]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Club Loaned From"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Club Loaned From]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">17</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Club Joined]"
+                      cachedDataType="date"
+                      cachedName="Club Joined"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Club Joined]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">18</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Contract Expires]"
+                      cachedDataType="r8"
+                      cachedName="Contract Expires"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Contract Expires]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">19</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Nationality Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nationality Name"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Nationality Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">20</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Preferred Foot]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Preferred Foot"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Preferred Foot]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">21</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Work Rate]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Work Rate"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Work Rate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">22</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Pace]"
+                      cachedDataType="r8"
+                      cachedName="Pace"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Pace]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">23</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Shooting]"
+                      cachedDataType="r8"
+                      cachedName="Shooting"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Shooting]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">24</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Passing]"
+                      cachedDataType="r8"
+                      cachedName="Passing"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Passing]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">25</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Dribbling]"
+                      cachedDataType="r8"
+                      cachedName="Dribbling"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Dribbling]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">26</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Defending]"
+                      cachedDataType="r8"
+                      cachedName="Defending"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Defending]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">27</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Clean Dataset\Sort.Inputs[Sort Input].Columns[Physic]"
+                      cachedDataType="r8"
+                      cachedName="Physic"
+                      lineageId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Physic]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">28</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Clean Dataset\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Short Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Short Name]"
+                      name="Short Name"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Short Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Name In Home Country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Name In Home Country]"
+                      name="Name In Home Country"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Name In Home Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Positions]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Positions]"
+                      name="Positions"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Positions]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Overall]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Overall]"
+                      name="Overall"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Overall]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Potential]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Potential]"
+                      name="Potential"
+                      sortKeyPosition="5">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Potential]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Market Value]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Market Value]"
+                      name="Market Value"
+                      sortKeyPosition="6">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Market Value]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Age]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Age]"
+                      name="Age"
+                      sortKeyPosition="7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Age]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Day]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Day]"
+                      name="Day"
+                      sortKeyPosition="8">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Day]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Month]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Month]"
+                      name="Month"
+                      sortKeyPosition="9">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Month]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Year]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Year]"
+                      name="Year"
+                      sortKeyPosition="10">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Year]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Date Of Birth]"
+                      dataType="date"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Date Of Birth]"
+                      name="Date Of Birth"
+                      sortKeyPosition="11">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Date Of Birth]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Height]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Height]"
+                      name="Height"
+                      sortKeyPosition="12">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Height]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Weight]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Weight]"
+                      name="Weight"
+                      sortKeyPosition="13">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Weight]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Current Club]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Current Club]"
+                      name="Current Club"
+                      sortKeyPosition="14">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Current Club]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[League]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[League]"
+                      name="League"
+                      sortKeyPosition="15">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[League]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Club Jersey Number]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Club Jersey Number]"
+                      name="Club Jersey Number"
+                      sortKeyPosition="16">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Club Jersey Number]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Club Loaned From]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Club Loaned From]"
+                      name="Club Loaned From"
+                      sortKeyPosition="17">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Club Loaned From]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Club Joined]"
+                      dataType="date"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Club Joined]"
+                      name="Club Joined"
+                      sortKeyPosition="18">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Club Joined]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Contract Expires]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Contract Expires]"
+                      name="Contract Expires"
+                      sortKeyPosition="19">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Contract Expires]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Nationality Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Nationality Name]"
+                      name="Nationality Name"
+                      sortKeyPosition="20">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Nationality Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Preferred Foot]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Preferred Foot]"
+                      name="Preferred Foot"
+                      sortKeyPosition="21">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Preferred Foot]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Work Rate]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Work Rate]"
+                      name="Work Rate"
+                      sortKeyPosition="22">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Work Rate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Pace]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Pace]"
+                      name="Pace"
+                      sortKeyPosition="23">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Pace]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Shooting]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Shooting]"
+                      name="Shooting"
+                      sortKeyPosition="24">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Shooting]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Passing]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Passing]"
+                      name="Passing"
+                      sortKeyPosition="25">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Passing]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Dribbling]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Dribbling]"
+                      name="Dribbling"
+                      sortKeyPosition="26">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Dribbling]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Defending]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Defending]"
+                      name="Defending"
+                      sortKeyPosition="27">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Defending]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Physic]"
+                      dataType="r8"
+                      lineageId="Package\Clean Dataset\Sort.Outputs[Sort Output].Columns[Physic]"
+                      name="Physic"
+                      sortKeyPosition="28">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Clean Dataset\Dataset.Outputs[Excel Source Output].Columns[Physic]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Clean Dataset.Paths[Excel Source Output]"
+              endId="Package\Clean Dataset\Sort.Inputs[Sort Input]"
+              name="Excel Source Output"
+              startId="Package\Clean Dataset\Dataset.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Clean Dataset.Paths[Sort Output]"
+              endId="Package\Clean Dataset\DataClean.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Clean Dataset\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\Clean Dataset"
+          TopLeft="175.000002980232,86.4117659177747" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Clean Dataset">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="114.4,41.6"
+          Id="Package\Clean Dataset\Dataset"
+          TopLeft="111.428573326189,74.9411775216099" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Clean Dataset\Sort"
+          TopLeft="300.71429083542,78.7647069869982" />
+        <EdgeLayout
+          Id="Package\Clean Dataset.Paths[Excel Source Output]"
+          TopLeft="225.828573326189,97.6529422543041">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.8857175092308,0"
+              Start="0,0"
+              End="67.3857175092308,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="67.3857175092308,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Clean Dataset\DataClean"
+          TopLeft="465.714293645353,79.5294128800759" />
+        <EdgeLayout
+          Id="Package\Clean Dataset.Paths[Sort Output]"
+          TopLeft="398.31429083542,99.947059933537">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="67.4000028099334,0"
+              Start="0,0"
+              End="59.9000028099334,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="59.9000028099334,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Clean Dataset\Dataset">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Clean Dataset\DataClean">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

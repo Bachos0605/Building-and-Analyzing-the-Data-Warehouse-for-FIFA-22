@@ -1,0 +1,1797 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/22/2022 4:38:21 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-DJSOJOS"
+  DTS:CreatorName="DESKTOP-DJSOJOS\19521"
+  DTS:DTSID="{17A7C637-A6B9-40C5-8F30-424E0F94F592}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DIM_Positions"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{8F686848-69FF-4723-ACCC-0758D948D664}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Upload to DIM_Positions"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3DB83771-C5C2-43CE-8657-EF691C350F85}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Upload to DIM_Positions"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Upload to DIM_Positions\DataClean"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DataClean"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DataClean]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Upload to DIM_Positions\DataClean.Connections[OleDbConnection]"
+                  connectionManagerID="{CCAE4831-A9AA-4970-B194-1F36843234FB}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-DJSOJOS.OriginalDataset]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Short Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Short Name]"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Short Name]"
+                      name="Short Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Name In Home Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Name In Home Country]"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Name In Home Country]"
+                      name="Name In Home Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Positions]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Positions]"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Positions]"
+                      name="Positions"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Overall]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Overall]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Overall]"
+                      name="Overall"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Potential]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Potential]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Potential]"
+                      name="Potential"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Market Value]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Market Value]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Market Value]"
+                      name="Market Value"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Age]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Age]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Day]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Day]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Day]"
+                      name="Day"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Month]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Month]"
+                      name="Month"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Year]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Date Of Birth]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Date Of Birth]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Date Of Birth]"
+                      name="Date Of Birth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Height]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Height]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Height]"
+                      name="Height"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Weight]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Weight]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Weight]"
+                      name="Weight"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Current Club]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Current Club]"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Current Club]"
+                      name="Current Club"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[League]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[League]"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[League]"
+                      name="League"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Club Jersey Number]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Club Jersey Number]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Club Jersey Number]"
+                      name="Club Jersey Number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Club Loaned From]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Club Loaned From]"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Club Loaned From]"
+                      name="Club Loaned From"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Club Joined]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Club Joined]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Club Joined]"
+                      name="Club Joined"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Contract Expires]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Contract Expires]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Contract Expires]"
+                      name="Contract Expires"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Nationality Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Nationality Name]"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Nationality Name]"
+                      name="Nationality Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Preferred Foot]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Preferred Foot]"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Preferred Foot]"
+                      name="Preferred Foot"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Work Rate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Work Rate]"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Work Rate]"
+                      name="Work Rate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Pace]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Pace]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Pace]"
+                      name="Pace"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Shooting]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Shooting]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Shooting]"
+                      name="Shooting"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Passing]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Passing]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Passing]"
+                      name="Passing"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Dribbling]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Dribbling]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Dribbling]"
+                      name="Dribbling"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Defending]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Defending]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Defending]"
+                      name="Defending"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Physic]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Physic]"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Physic]"
+                      name="Physic"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Short Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Short Name" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Name In Home Country]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name In Home Country" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Positions]"
+                      dataType="wstr"
+                      length="255"
+                      name="Positions" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Overall]"
+                      dataType="r8"
+                      name="Overall" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Potential]"
+                      dataType="r8"
+                      name="Potential" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Market Value]"
+                      dataType="r8"
+                      name="Market Value" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Age]"
+                      dataType="r8"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Day]"
+                      dataType="r8"
+                      name="Day" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      dataType="r8"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      dataType="r8"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Date Of Birth]"
+                      dataType="dbDate"
+                      name="Date Of Birth" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Height]"
+                      dataType="r8"
+                      name="Height" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Weight]"
+                      dataType="r8"
+                      name="Weight" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Current Club]"
+                      dataType="wstr"
+                      length="255"
+                      name="Current Club" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[League]"
+                      dataType="wstr"
+                      length="255"
+                      name="League" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Club Jersey Number]"
+                      dataType="r8"
+                      name="Club Jersey Number" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Club Loaned From]"
+                      dataType="wstr"
+                      length="255"
+                      name="Club Loaned From" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Club Joined]"
+                      dataType="dbDate"
+                      name="Club Joined" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Contract Expires]"
+                      dataType="r8"
+                      name="Contract Expires" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Nationality Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nationality Name" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Preferred Foot]"
+                      dataType="wstr"
+                      length="255"
+                      name="Preferred Foot" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Work Rate]"
+                      dataType="wstr"
+                      length="255"
+                      name="Work Rate" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Pace]"
+                      dataType="r8"
+                      name="Pace" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Shooting]"
+                      dataType="r8"
+                      name="Shooting" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Passing]"
+                      dataType="r8"
+                      name="Passing" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Dribbling]"
+                      dataType="r8"
+                      name="Dribbling" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Defending]"
+                      dataType="r8"
+                      name="Defending" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].ExternalColumns[Physic]"
+                      dataType="r8"
+                      name="Physic" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Short Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Short Name]"
+                      name="Short Name" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Name In Home Country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Name In Home Country]"
+                      name="Name In Home Country" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Positions]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Positions]"
+                      name="Positions" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Overall]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Overall]"
+                      name="Overall" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Potential]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Potential]"
+                      name="Potential" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Market Value]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Market Value]"
+                      name="Market Value" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Age]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Age]"
+                      name="Age" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Day]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Day]"
+                      name="Day" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Month]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Month]"
+                      name="Month" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      name="Year" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Date Of Birth]"
+                      dataType="dbDate"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Date Of Birth]"
+                      name="Date Of Birth" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Height]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Height]"
+                      name="Height" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Weight]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Weight]"
+                      name="Weight" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Current Club]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Current Club]"
+                      name="Current Club" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[League]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[League]"
+                      name="League" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Club Jersey Number]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Club Jersey Number]"
+                      name="Club Jersey Number" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Club Loaned From]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Club Loaned From]"
+                      name="Club Loaned From" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Club Joined]"
+                      dataType="dbDate"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Club Joined]"
+                      name="Club Joined" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Contract Expires]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Contract Expires]"
+                      name="Contract Expires" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Nationality Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Nationality Name]"
+                      name="Nationality Name" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Preferred Foot]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Preferred Foot]"
+                      name="Preferred Foot" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Work Rate]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Work Rate]"
+                      name="Work Rate" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Pace]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Pace]"
+                      name="Pace" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Shooting]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Shooting]"
+                      name="Shooting" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Passing]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Passing]"
+                      name="Passing" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Dribbling]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Dribbling]"
+                      name="Dribbling" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Defending]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Defending]"
+                      name="Defending" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Physic]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[Physic]"
+                      name="Physic" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Upload to DIM_Positions\DIM_Positions"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DIM_Positions"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DIM_Positions]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Upload to DIM_Positions\DIM_Positions.Connections[OleDbConnection]"
+                  connectionManagerID="{A9317F54-4898-4B96-A349-42AEC17B5679}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-DJSOJOS.FIFA22Players_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Upload to DIM_Positions\DIM_Positions.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\DIM_Positions.Inputs[OLE DB Destination Input].Columns[Positions]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Positions"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DIM_Positions.Inputs[OLE DB Destination Input].ExternalColumns[Positions]"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Positions]" />
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\DIM_Positions.Inputs[OLE DB Destination Input].Columns[Preferred Foot]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Preferred Foot"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DIM_Positions.Inputs[OLE DB Destination Input].ExternalColumns[Preferred Foot]"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Preferred Foot]" />
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\DIM_Positions.Inputs[OLE DB Destination Input].Columns[Work Rate]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Work Rate"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\Upload to DIM_Positions\DIM_Positions.Inputs[OLE DB Destination Input].ExternalColumns[Work Rate]"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Work Rate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DIM_Positions.Inputs[OLE DB Destination Input].ExternalColumns[Positions_ID]"
+                      dataType="i4"
+                      name="Positions_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DIM_Positions.Inputs[OLE DB Destination Input].ExternalColumns[Positions]"
+                      dataType="wstr"
+                      length="255"
+                      name="Positions" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DIM_Positions.Inputs[OLE DB Destination Input].ExternalColumns[Preferred Foot]"
+                      dataType="wstr"
+                      length="255"
+                      name="Preferred Foot" />
+                    <externalMetadataColumn
+                      refId="Package\Upload to DIM_Positions\DIM_Positions.Inputs[OLE DB Destination Input].ExternalColumns[Work Rate]"
+                      dataType="wstr"
+                      length="255"
+                      name="Work Rate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload to DIM_Positions\DIM_Positions.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Upload to DIM_Positions\DIM_Positions.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DIM_Positions.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload to DIM_Positions\DIM_Positions.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\DIM_Positions.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload to DIM_Positions\DIM_Positions.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Upload to DIM_Positions\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Short Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Short Name"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Short Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Name In Home Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name In Home Country"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Name In Home Country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Positions]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Positions"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Positions]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Overall]"
+                      cachedDataType="r8"
+                      cachedName="Overall"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Overall]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Potential]"
+                      cachedDataType="r8"
+                      cachedName="Potential"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Potential]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Market Value]"
+                      cachedDataType="r8"
+                      cachedName="Market Value"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Market Value]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Age]"
+                      cachedDataType="r8"
+                      cachedName="Age"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Age]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Day]"
+                      cachedDataType="r8"
+                      cachedName="Day"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Day]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Month]"
+                      cachedDataType="r8"
+                      cachedName="Month"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Month]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Year]"
+                      cachedDataType="r8"
+                      cachedName="Year"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Year]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Date Of Birth]"
+                      cachedDataType="dbDate"
+                      cachedName="Date Of Birth"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Date Of Birth]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Height]"
+                      cachedDataType="r8"
+                      cachedName="Height"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Height]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Weight]"
+                      cachedDataType="r8"
+                      cachedName="Weight"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Weight]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Current Club]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Current Club"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Current Club]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[League]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="League"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[League]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Club Jersey Number]"
+                      cachedDataType="r8"
+                      cachedName="Club Jersey Number"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Club Jersey Number]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Club Loaned From]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Club Loaned From"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Club Loaned From]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Club Joined]"
+                      cachedDataType="dbDate"
+                      cachedName="Club Joined"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Club Joined]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Contract Expires]"
+                      cachedDataType="r8"
+                      cachedName="Contract Expires"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Contract Expires]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Nationality Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nationality Name"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Nationality Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Preferred Foot]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Preferred Foot"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Preferred Foot]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Work Rate]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Work Rate"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Work Rate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Pace]"
+                      cachedDataType="r8"
+                      cachedName="Pace"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Pace]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Shooting]"
+                      cachedDataType="r8"
+                      cachedName="Shooting"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Shooting]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Passing]"
+                      cachedDataType="r8"
+                      cachedName="Passing"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Passing]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Dribbling]"
+                      cachedDataType="r8"
+                      cachedName="Dribbling"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Dribbling]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Defending]"
+                      cachedDataType="r8"
+                      cachedName="Defending"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Defending]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input].Columns[Physic]"
+                      cachedDataType="r8"
+                      cachedName="Physic"
+                      lineageId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Physic]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Short Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Short Name]"
+                      name="Short Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Short Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Name In Home Country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Name In Home Country]"
+                      name="Name In Home Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Name In Home Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Positions]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Positions]"
+                      name="Positions"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Positions]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Overall]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Overall]"
+                      name="Overall">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Overall]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Potential]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Potential]"
+                      name="Potential">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Potential]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Market Value]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Market Value]"
+                      name="Market Value">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Market Value]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Age]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Age]"
+                      name="Age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Age]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Day]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Day]"
+                      name="Day">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Day]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Month]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Month]"
+                      name="Month">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Month]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Year]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Year]"
+                      name="Year">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Year]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Date Of Birth]"
+                      dataType="dbDate"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Date Of Birth]"
+                      name="Date Of Birth">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Date Of Birth]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Height]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Height]"
+                      name="Height">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Height]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Weight]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Weight]"
+                      name="Weight">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Weight]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Current Club]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Current Club]"
+                      name="Current Club">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Current Club]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[League]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[League]"
+                      name="League">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[League]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Club Jersey Number]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Club Jersey Number]"
+                      name="Club Jersey Number">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Club Jersey Number]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Club Loaned From]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Club Loaned From]"
+                      name="Club Loaned From">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Club Loaned From]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Club Joined]"
+                      dataType="dbDate"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Club Joined]"
+                      name="Club Joined">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Club Joined]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Contract Expires]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Contract Expires]"
+                      name="Contract Expires">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Contract Expires]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Nationality Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Nationality Name]"
+                      name="Nationality Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Nationality Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Preferred Foot]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Preferred Foot]"
+                      name="Preferred Foot"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Preferred Foot]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Work Rate]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Work Rate]"
+                      name="Work Rate"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Work Rate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Pace]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Pace]"
+                      name="Pace">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Pace]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Shooting]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Shooting]"
+                      name="Shooting">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Shooting]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Passing]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Passing]"
+                      name="Passing">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Passing]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Dribbling]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Dribbling]"
+                      name="Dribbling">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Dribbling]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Defending]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Defending]"
+                      name="Defending">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Defending]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Physic]"
+                      dataType="r8"
+                      lineageId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output].Columns[Physic]"
+                      name="Physic">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output].Columns[Physic]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Upload to DIM_Positions.Paths[OLE DB Source Output]"
+              endId="Package\Upload to DIM_Positions\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Upload to DIM_Positions\DataClean.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Upload to DIM_Positions.Paths[Sort Output]"
+              endId="Package\Upload to DIM_Positions\DIM_Positions.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Upload to DIM_Positions\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\Upload to DIM_Positions"
+          TopLeft="137.857145204836,99.4117661000948" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Upload to DIM_Positions">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Upload to DIM_Positions\DataClean"
+          TopLeft="107.142858967489,81.0588246662312" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Upload to DIM_Positions\Sort"
+          TopLeft="300.71429083542,84.1176482385418" />
+        <EdgeLayout
+          Id="Package\Upload to DIM_Positions.Paths[OLE DB Source Output]"
+          TopLeft="233.542858967489,103.388236452386">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="67.1714318679304,0"
+              Start="0,0"
+              End="59.6714318679304,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="59.6714318679304,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Upload to DIM_Positions\DIM_Positions"
+          TopLeft="460.714293560204,87.94117770393" />
+        <EdgeLayout
+          Id="Package\Upload to DIM_Positions.Paths[Sort Output]"
+          TopLeft="398.31429083542,106.829412971236">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.400002724784,0"
+              Start="0,0"
+              End="54.900002724784,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="54.900002724784,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Upload to DIM_Positions\DataClean">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Upload to DIM_Positions\DIM_Positions">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
