@@ -1,0 +1,126 @@
+﻿//câu 1 thống kê chiều cao các cầu thủ
+select {[Measures].[FACT Player Count]} on columns,
+       non empty {[DIM BMI].[Height].members} on rows
+from [Fifa22 DW]
+//============================================================================================================
+//câu 2 danh sách cầu thủ đá cho Manchester united
+ SELECT NON EMPTY { [Measures].[FACT Player Count] } ON COLUMNS, 
+        NON EMPTY { ([DIM Name].[Short Name].[Short Name].ALLMEMBERS 
+        * [DIM Name].[Name In Home Country].[Name In Home Country].ALLMEMBERS 
+		* [DIM Club].[Club Jersey Number].[Club Jersey Number].ALLMEMBERS ) } ON ROWS 
+FROM ( SELECT ( { [DIM Club].[Current Club].&[Manchester United] } ) ON COLUMNS 
+       FROM [Fifa22 DW]) 
+	   WHERE ( [DIM Club].[Current Club].&[Manchester United] )
+//============================================================================================================
+//câu 3 tổng giá trị chuyển nhượng đội hình FC Barcelona
+ SELECT NON EMPTY { [Measures].[Market Value] } ON COLUMNS,
+ NON EMPTY { ([DIM Club].[Current Club].[Current Club].ALLMEMBERS ) } ON ROWS 
+ FROM ( SELECT ( { [DIM Club].[Current Club].&[FC Barcelona] } ) ON COLUMNS 
+        FROM [Fifa22 DW])
+//============================================================================================================
+//câu 4 liệt kê danh sách gồm tên cầu thủ câu lạc bộ đang hoạt động ngày tham gia và hết hạn hợp đồng vào năm 2022
+ SELECT NON EMPTY { [Measures].[FACT Player Count] } ON COLUMNS, 
+      NON EMPTY { ([DIM Name].[Short Name].[Short Name].ALLMEMBERS 
+      * [DIM Name].[Name In Home Country].[Name In Home Country].ALLMEMBERS 
+	  * [DIM Club].[Current Club].[Current Club].ALLMEMBERS 
+	  * [DIM Contract Term].[Club Joined].[Club Joined].ALLMEMBERS 
+	  * [DIM Contract Term].[Contract Expires].[Contract Expires].ALLMEMBERS ) } ON ROWS 
+FROM ( SELECT ( { [DIM League].[League].&[English Premier League] } ) ON COLUMNS 
+       FROM ( SELECT ( { [DIM Contract Term].[Contract Expires].&[2.022E3] } ) ON COLUMNS 
+	          FROM [Fifa22 DW])) 
+			  WHERE ( [DIM League].[League].&[English Premier League] )
+//============================================================================================================
+
+//câu 5 các cầu thủ có giá trị chuyển nhượng lớn nhất và nhỏ nhất sinh 1987-06-24
+select ({[Measures].[Maximum Market Value],[Measures].[Minimum Market Value]}) on columns,
+        non empty {[DIM Name].[Short Name].members} on rows
+from [Fifa22 DW]
+where [DIM Date Of Birth].[Date Of Birth].&[1987-06-24T00:00:00]
+//============================================================================================================
+//câu 6 sắp xếp chiều cao các cầu thủ tăng dần
+select {[Measures].[Maximum Age]} on 0,
+non empty Order({[DIM BMI].[Height].children}
+                 ,[Measures].[Age Count]
+				 ,ASC) on 1
+from [Fifa22 DW]
+//============================================================================================================
+//câu 7 top 5 các cầu thủ còn tham gia thi đấu lớn tuổi nhất
+select [Measures].[Maximum Age]on 0,
+Head(
+	        Order(
+			      [DIM Name].[Short Name].children
+				  ,[Measures].[Maximum Age]
+				  ,DESC)   
+				  ,5) on 1
+from [Fifa22 DW]
+//============================================================================================================
+//câu 8 top 5 các cầu thủ còn tham gia thi đấu nhỏ tuổi nhất
+select [Measures].[Maximum Age]on 0,
+Head(
+	        Order(
+			      [DIM Name].[Short Name].children
+				  ,[Measures].[Maximum Age]
+				  ,ASC)   
+				  ,5) on 1
+from [Fifa22 DW]
+//============================================================================================================
+//câu 9 thống kê tuổi cầu sinh 1987-06-24 tại câu lạc bộ với tỉ lệ công việc và chân thuận
+select [Measures].[Minimum Age] on 0,
+      non empty crossjoin ({[DIM Positions].[Preferred Foot].children
+	                        *[DIM Positions].[Work Rate].children}
+							,[DIM Club].[Current Club].children) on 1
+from [Fifa22 DW]
+where[DIM Date Of Birth].[Date Of Birth].&[1987-06-24T00:00:00]
+//============================================================================================================
+//câu 10 giá trị chuyển nhượng lớn nhất các cầu thủ và tuổi hiện tại có vị trí đá khác GK(chỉ đá GK) và
+//sắp xếp theo lương giảm dần sinh 1987-06-24
+select {[Measures].[Maximum Market Value],[Measures].[Maximum Age]} on 0,
+non empty Order(
+                 {[DIM Positions].[Positions].members}
+				 - {[DIM Positions].[Positions].&[GK]}
+				 ,[Measures].[Maximum Market Value],DESC) on 1
+from [Fifa22 DW]
+where [DIM Date Of Birth].[Date Of Birth].&[1987-06-24T00:00:00]
+//============================================================================================================
+//cau 11 top 10 cầu thủ giá trị chuyển nhượng trên 30000000 sinh năm 1987 và tuổi hiện tại
+select {[Measures].[Maximum Market Value],[Measures].[Maximum Age]} on 0,
+topcount(
+          filter([DIM Name].[Short Name].children,[Measures].[Maximum Market Value]>3000000)
+		  ,10,[Measures].[Maximum Age]) on 1
+from [Fifa22 DW]
+where [DIM Date Of Birth].[Year].&[1987]
+//============================================================================================================
+//cau 12 thống kê giá trị chuyển nhượng các cầu thủ từng tháng trong năm 1987(drill down)
+select  [Measures].[Maximum Market Value] on 0,
+[DIM Date Of Birth].[Y_M].&[1.987E3].children on 1
+from [Fifa22 DW]
+//============================================================================================================
+//cau 13 sắp xếp tên club bắt đầu bằng "l" theo chiều tăng dần tuổi ở các năm
+select [Measures].[Age] on 0,
+non empty Order(
+       generate([DIM Date Of Birth].[Year].children
+	   ,filter([DIM Club].[Current Club].children
+	   ,left([DIM Club].[Current Club].currentMember.Name,1)="L")
+	   *[DIM Date Of Birth].[Year].CurrentMember)
+	   ,[Measures].[Age],ASC) on 1
+from [Fifa22 DW]
+//============================================================================================================
+//cau 14 truy vấn 5 câu lạc bộ lương giảm dần lấy bắt đầu từ vị trí thứ 3 thống kê theo chiều cao
+select {[Measures].[Maximum Market Value]} on 0,
+non empty Generate([DIM BMI].[Height].children
+         ,Subset([DIM BMI].[Height].CurrentMember*Order([DIM Club].[Current Club].children
+		 ,[Measures].[Maximum Market Value]
+		 ,DESC),3,5)) on 1
+from [Fifa22 DW]
+//============================================================================================================
+//cau 15 thống kê theo chiều cao,các câu lạc bộ
+//3 vị trí đá trên sân vị trí chơi bóng của các cầu thủ trừ câu lạc bộ Manchester United
+select {[Measures].[Maximum Age]} on 0,
+non empty CrossJoin ([DIM BMI].[Height].children
+           ,EXCEPT ([DIM Club].[Current Club].children
+		   ,[DIM Club].[Current Club].&[Manchester United])
+		   ,topcount([DIM Positions].[Positions].children,3
+		   ,[Measures].[Maximum Age])
+		   )on 1
+from [Fifa22 DW]
+
