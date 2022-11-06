@@ -1,0 +1,492 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="0c42d8a4-4186-46e1-8699-f0d247646f7b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Original</ID>
+  <Name>Original</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="9b960e2c-c38c-42eb-8bad-cb39bd5dd11a">
+      <ID>Data Clean</ID>
+      <Name>Data Clean</Name>
+      <DimensionID>Data Clean</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="d32f82be-6713-49ee-9940-be885ec4896f">
+          <AttributeID>Short Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="8ed0dbf1-c454-4de0-a06f-c599df694aa9">
+      <ID>Data Clean</ID>
+      <Name>Data Clean</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="5d29b0af-ffb9-4257-b520-c298b4953363">
+          <ID>Overall</ID>
+          <Name>Overall</Name>
+          <Source dwd:design-time-name="842d5511-620e-434a-a5b0-54a6a6e0b9c6">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="83541344-0e73-473b-b040-bc975e73e3ef">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Overall</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="66d0bf48-497f-431d-90a8-7ab3664ca284">
+          <ID>Potential</ID>
+          <Name>Potential</Name>
+          <Source dwd:design-time-name="35e22e80-0a78-4eea-b60d-fc289bf4d557">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b6ed28b1-287c-471c-9da2-283f1dbd2e39">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Potential</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d6adbb82-39e4-4c29-86b3-3a3502cc41fd">
+          <ID>Market Value</ID>
+          <Name>Market Value</Name>
+          <Source dwd:design-time-name="bae05c14-e0de-4b29-8a12-802ec9f5dd9f">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="45e11a49-b2dc-4634-b964-51d11b2be264">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Market_x0020_Value</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a6a77454-4154-42ef-9e83-414df8ba1735">
+          <ID>Age</ID>
+          <Name>Age</Name>
+          <Source dwd:design-time-name="538442f9-f0e2-4bf8-993e-25edb6f37a1d">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4e2710d6-8a2a-4f8a-83f9-2f925bd09065">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Age</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="50ace2f0-b612-497e-b5c5-557e426020ed">
+          <ID>Day</ID>
+          <Name>Day</Name>
+          <Source dwd:design-time-name="526725eb-3c5b-4734-92c4-79a3e0cd3233">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="0114a901-e15a-441e-abf4-be6d485d2c19">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Day</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="31332316-122c-4b1f-bf49-a7a3f128d704">
+          <ID>Month</ID>
+          <Name>Month</Name>
+          <Source dwd:design-time-name="e88bfa2f-97b4-4188-9348-c059926f6510">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="91ee6cec-89fe-4470-873e-4159dd8f80e8">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Month</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="42d02a65-4017-47e0-929b-12e7256c2053">
+          <ID>Year</ID>
+          <Name>Year</Name>
+          <Source dwd:design-time-name="3cac856c-3117-4e6a-8a84-2aec61e1a1e6">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2ed8d31a-1338-49bb-afda-959672f5ef10">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Year</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d78361d3-4266-4f46-99a3-1f30f71bc3e5">
+          <ID>Height</ID>
+          <Name>Height</Name>
+          <Source dwd:design-time-name="dce7a324-8328-4d74-a671-8c94fbba6444">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f9aea653-dce1-4a4c-8927-bc22ae9fa775">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Height</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="44a55487-99c4-4e75-8771-9d41884493ad">
+          <ID>Weight</ID>
+          <Name>Weight</Name>
+          <Source dwd:design-time-name="ae59de25-2f95-48e2-8cd9-d803aa7e2eab">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f6b1d242-ff69-4770-9810-16163b32984c">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Weight</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="0909d0d1-1d45-44ad-80d9-2659321d250c">
+          <ID>Club Jersey Number</ID>
+          <Name>Club Jersey Number</Name>
+          <Source dwd:design-time-name="90e02075-b12d-428b-be37-76c870ea0110">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="20d4c06f-63a2-43e2-ae4a-4bd6474426a3">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Club_x0020_Jersey_x0020_Number</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="16bbcb51-188b-429e-a7af-3df2dcbe7b93">
+          <ID>Contract Expires</ID>
+          <Name>Contract Expires</Name>
+          <Source dwd:design-time-name="6c1ad2a0-3d9e-43c0-b122-964a35e1c24d">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e49f0ed8-3bbc-40c9-a640-a3b447aa4621">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Contract_x0020_Expires</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="17cedfb8-ab8c-4113-9d05-fdf0dbad049d">
+          <ID>Pace</ID>
+          <Name>Pace</Name>
+          <Source dwd:design-time-name="dfbe735e-e9a8-41fa-acb5-2208676761b8">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ccd03668-2584-4a72-8ea0-8932830e324d">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Pace</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f4c42807-a09c-45d2-87d9-6b0d1dc3a155">
+          <ID>Shooting</ID>
+          <Name>Shooting</Name>
+          <Source dwd:design-time-name="9ab0dfd1-99f4-4f12-b082-2209ed0a3ac2">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="62b726a8-ee0b-4dcf-b9b7-54eec3582364">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Shooting</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4f2cf7a0-315a-4116-904d-34f4e0eb5e70">
+          <ID>Passing</ID>
+          <Name>Passing</Name>
+          <Source dwd:design-time-name="c147bb28-f0c4-4555-977f-33f3c8a7bd9a">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="14f53f82-7009-4525-a3ce-c2137b46d846">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Passing</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="e107baa6-3945-42d4-83ef-c1f370dc6e84">
+          <ID>Dribbling</ID>
+          <Name>Dribbling</Name>
+          <Source dwd:design-time-name="75523e7e-29b1-42c0-ae20-ae20db0a7de9">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8bc22ecf-5458-466c-9df9-8d97128ea817">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Dribbling</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="bf2cce75-7b3d-4733-92d8-531bbf73c937">
+          <ID>Defending</ID>
+          <Name>Defending</Name>
+          <Source dwd:design-time-name="4ee8e0ea-acdb-43f4-8848-921e8e2c06a7">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="fa98ec7c-d589-4840-ba4b-eeadd67eee7f">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Defending</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6a18d88c-79c6-4cb2-a932-3d00dc13928e">
+          <ID>Physic</ID>
+          <Name>Physic</Name>
+          <Source dwd:design-time-name="8ad7eff7-a8f2-4b25-b50d-223f0e151068">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5e5246f2-3abb-420d-8f0b-230066ff135e">
+              <TableID>dbo_DataClean</TableID>
+              <ColumnID>Physic</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="1292159e-341f-43dd-b44b-7803587ef2d9">
+          <ID>Data Clean Count</ID>
+          <Name>Data Clean Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="13130ede-f220-4638-a2d4-fc94d26caa29">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="7ea961b1-ce27-43c2-8a68-9161225a66e2">
+              <TableID>dbo_DataClean</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="127f2cd2-b6b6-4357-a8dc-72b3582843c6">
+          <CubeDimensionID>Data Clean</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="ebd0fa2e-475c-4af6-90c1-a3224829df18">
+              <AttributeID>Short Name</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="9c5cc57c-8a87-4bb1-9a32-fb13f7b0e2de">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8cd4152f-0cc5-4140-a41b-b16c66babda0">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Short_x0020_Name</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="84ac1025-8265-44ac-a381-d180686dea78">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0b72a15b-1f7f-4e69-a9d7-d68082318022">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Name_x0020_In_x0020_Home_x0020_Country</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="187fadc1-4ba8-4647-96a3-8dd939803d25">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="7405f977-342a-407e-9b7c-227be418379f">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Positions</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="33bc74f4-c0b2-4f01-b6e9-95fc9d7af72f">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6b959772-8105-48bd-9362-fae19d9f8783">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Overall</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="e495b3a1-407e-4166-bdfa-7636f9a7daba">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="646ecd1d-db56-4ada-b1ed-9203ca84c300">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Potential</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="b81bbd51-c275-43ef-8a35-84741cfcf6b6">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e2612500-e1df-44c5-932b-7364c766c19a">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Market_x0020_Value</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="2d3a3f18-da47-4f6a-9f5f-c04a3c096ebd">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2b94669a-8a7d-4fa5-b817-1951f0a9e3f6">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Age</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="cc555f0b-da6a-4132-b349-0b9940ff450d">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8056bd93-fb23-4047-8551-e456a27a9c1c">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Day</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="dac261d5-241a-4ce8-bf02-c9e415eff95e">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fc031db3-f0df-469a-8fdb-c2ad18ce3993">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Month</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="35925bc8-ee83-4660-9ce5-68cd6b61e957">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1d66dc6b-e3c0-4bb9-a107-80ae8b77e228">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Year</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="6c226176-d05d-4011-adbe-0149f22c187b">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="40e7adf7-cbb3-4a5d-a9dd-900f2f299fbb">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Date_x0020_Of_x0020_Birth</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="6bfeb0d6-1c41-414b-80fc-90a3f8708e7d">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3c25e780-5423-4c84-b24f-ff3aa84db5ee">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Height</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="83a48d45-53ec-4e11-8336-3c0866ae77c1">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d2601d8b-24bc-449b-8800-89caa92adf32">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Weight</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="642c9239-85ad-488d-8a24-4342396bb00a">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ef6d0a29-65ad-4c97-8e73-2a0d7f62729f">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Current_x0020_Club</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="9178985a-383d-46cb-bc07-1e8dfe8cca13">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b5694ac8-88ee-4b56-8df6-4e6d98e872da">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>League</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="b4fbcb6a-75f0-4355-8313-12ab6cf8ad0c">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="65db4014-eaaa-4d9a-a0ed-be11a39cd46b">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Club_x0020_Jersey_x0020_Number</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="cecf68ea-51d1-497f-97b6-cc53d8c03d85">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="eb8ad9c3-8285-463c-a054-a5a6d56c9462">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Club_x0020_Loaned_x0020_From</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="18941f97-5c6b-477e-b95b-58fc0ab8a743">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8c274d9f-7bb6-44e3-a785-8904d50d3e77">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Club_x0020_Joined</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="117d6204-821c-440c-a06d-20b301192244">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="79d17f52-7d82-443b-9f53-cb8d4c9c3099">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Contract_x0020_Expires</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="3047e05d-6ee2-4011-9a03-58deded3729e">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ab777d52-832a-41d1-bd8b-55f321c7e032">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Nationality_x0020_Name</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="bf749d91-a41e-49c8-8aa1-5a9ce97dde71">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1a5f1cce-49e4-467d-881c-9ae33388335a">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Preferred_x0020_Foot</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="699ae4f1-1d0c-456b-8022-e4c858dec5e2">
+                  <DataType>WChar</DataType>
+                  <DataSize>255</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6b382dcc-19a4-4fec-a6aa-f591ca88bc81">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Work_x0020_Rate</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="b4989b81-d6ca-4f38-9a8c-1d767f2526c5">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="479979cf-337d-47b0-b835-35c2770d581b">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Pace</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="f3726213-9ee7-4905-b4a4-3108fd6954b0">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="73bc8631-4437-4720-bf68-ab2459c0aec5">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Shooting</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="1523e86f-f83d-4792-9ba9-58dd0080acb4">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="febf524c-e811-485c-825f-0f3a9cf74bc8">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Passing</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="8f5e0801-e4d4-4e40-a02c-809cc0866820">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="97672b28-bbd0-43c7-b2be-230b145f1672">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Dribbling</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="d790d027-57c7-41f5-aa30-af745a23b7d7">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="07b0ecc6-1743-4cf1-995e-be5864cebda1">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Defending</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="f38263d7-c58e-427c-9b6b-06641a8224d5">
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e40182c9-6633-4ce2-9cee-13b0f89b897e">
+                    <TableID>dbo_DataClean</TableID>
+                    <ColumnID>Physic</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="76391185-ef4f-4e06-83d2-0e1bccab45cf">
+    <DataSourceViewID>Original</DataSourceViewID>
+  </Source>
+</Cube>
