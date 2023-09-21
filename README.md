@@ -12,6 +12,7 @@ Building and Analyzing the Data Warehouse for FIFA 22
 ### Overview
 
 The process of bringing data analytics into sports is growing. And football is no exception to that trend. Thanks to Data Analysis, the German team built a dream team to win the 2014 World Cup by screening young players from all training facilities across the country. So I decided to try analyzing SOFIFA's FIFA22 dataset.
+
 ![](https://github.com/Bachos0605/Building-and-Analyzing-the-Data-Warehouse-for-FIFA-22/blob/main/Image/FIFA%2022.jpg)
 
 ### Dataset
@@ -43,7 +44,7 @@ Several screenshots show of Data Warehouse for FIFA 22 :
 
 ![](https://github.com/Bachos0605/Building-and-Analyzing-the-Data-Warehouse-for-FIFA-22/blob/main/Image/L%C6%B0%E1%BB%A3c%20%C4%91%E1%BB%93%20kho%20d%E1%BB%AF%20li%E1%BB%87u.png)
 
-![](https://github.com/Bachos0605/Building-and-Analyzing-the-Data-Warehouse-for-FIFA-22/blob/main/Image/L%C6%B0%E1%BB%A3c%20%C4%91%E1%BB%93%20kho%20d%E1%BB%AF%20li%E1%BB%87u.png)
+![](https://github.com/Bachos0605/Building-and-Analyzing-the-Data-Warehouse-for-FIFA-22/blob/main/Image/%C4%90%E1%BB%95%20d%E1%BB%AF%20li%E1%BB%87u%20v%C3%A0o%20b%E1%BA%A3ng%20DIM.png)
 
 ![](https://github.com/Bachos0605/Building-and-Analyzing-the-Data-Warehouse-for-FIFA-22/blob/main/Image/%C4%90%E1%BB%95%20d%E1%BB%AF%20li%E1%BB%87u%20v%C3%A0o%20b%E1%BA%A3ng%20DIM%20v2.png)
 
