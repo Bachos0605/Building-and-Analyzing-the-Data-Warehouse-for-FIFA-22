@@ -24,13 +24,13 @@ https://www.kaggle.com/datasets/stefanoleone992/fifa-22-complete-player-dataset
 
 Technology for Data Analysis:
 
-- Microsoft SQL Server Integration Services (SSIS)
--- Build Data Warehouse with Snowflake schema
--- Data Integration with SSIS
-- Microsoft SQL Server Analysis Services (SSAS)
--- Query on: SSAS Cubes, MDX Query and Pivot Table
-- Microsoft SQL Server Reporting Services (SSRS)
--- Visualization tools: Microsoft Report Builder and Microsoft Power BI
++ Microsoft SQL Server Integration Services (SSIS)
+- Build Data Warehouse with Snowflake schema
+- Data Integration with SSIS
++ Microsoft SQL Server Analysis Services (SSAS)
+- Query on: SSAS Cubes, MDX Query and Pivot Table
++ Microsoft SQL Server Reporting Services (SSRS)
+- Visualization tools: Microsoft Report Builder and Microsoft Power BI
 
 ### Responsibility
 
